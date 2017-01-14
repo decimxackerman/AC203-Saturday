@@ -45,6 +45,7 @@ ctx5.fillRect(200,0,100,100);
 ctx5.fillRect(100,100,100,100);
 ctx5.fillRect(0,200,100,100);
 ctx5.fillRect(200,200,100,100);
+ctx5.fillRect(200,200,100,100);
 
 //drawing on Canvas 6
 var c6 = document.getElementById("myCanvas6");
