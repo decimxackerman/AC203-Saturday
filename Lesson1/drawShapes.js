@@ -47,37 +47,47 @@ ctx5.fillRect(0,200,100,100);
 ctx5.fillRect(200,200,100,100);
 ctx5.fillRect(200,200,100,100);
 
-//drawing on Canvas 6
-var c6 = document.getElementById("myCanvas6");
-var ctx6 = c6.getContext("2d");
+//including images
+var poro = new Image();
+var house = new Image();
 
-var x = 0;
-var y = 0;
-var width = 300;
-var height = 300;
+//assigning source to img
+poro.src = "piq_300463_400x400.png";
+house.src = "house.png";
 
-ctx6.fillStyle="rgb(128,128,128)"
-ctx6.fillRect(x,y,width,height);
-
-while (width > 0){
-	x=x+10;
-	y=y+10;
-	width=width-20;
-	height=height-20;
-
-	ctx6.clearRect(x,y,width,height);
-
-	x=x+10;
-	y=y+10;
-	width=width-20;
-	height=height-20;
-
-	ctx6.fillRect(x,y,width,height);
+//draw img on canvas once loaded
+poro.onload = function(){
+	ctx6.drawImage(poro,300,300,100,100);
 }
 
+house.onload = function(){
+	ctx6.drawImage(house,400,130,300,270);
+}
 
+//setup for sixth canvas
+var c6 = document.getElementById('myCanvas6');
+var ctx6 = c6.getContext('2d');
 
+//drawing sky and grass
+ctx6.fillStyle="green";
+ctx6.fillRect(0,350,800,150);
+ctx6.fillStyle="cyan";
+ctx6.fillRect(0,0,800,350);
 
+//Sun
+ctx6.beginPath();
+ctx6.arc(100,100,50,0,6.28);
+ctx6.closePath();
+ctx6.stroke();
+ctx6.fillStyle="yellow";
+ctx6.fill();
 
-
-
+//Road
+ctx6.beginPath();
+ctx6.moveTo(375,350);
+ctx6.lineTo(350,500);
+ctx6.lineTo(450,500);
+ctx6.lineTo(425,350);
+ctx6.closePath();
+ctx6.fillStyle="grey";
+ctx6.fill();
