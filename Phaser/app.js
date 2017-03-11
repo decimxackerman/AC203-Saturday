@@ -24,7 +24,7 @@ function create() {
 	//add the 2 ledgers
 	var ledge = platforms.create(-150,250,'ground');
 	ledge.body.immovable = true;
-	var ledge1 = platforms.create(400,400,'ground');
+	ledge = platforms.create(400,400,'ground');
 	ledge.body.immovable = true;
 
 	//add a player to the game
@@ -41,8 +41,6 @@ function create() {
 	//add cursors as keyboard input to control the player
 	cursors = game.input.keyboard.createCursorKeys();
 
-
-
 }
 
 function update() {
@@ -57,4 +55,4 @@ function update() {
 		player.body.velocity.x = 150;
 		player.animations.play('right');
 	}
-
+}
