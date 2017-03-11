@@ -38,6 +38,9 @@ function create() {
 	player.body.gravity.y = 300;
 	player.body.collideWorldBounds = true;
 
+	//add cursors as keyboard input to control the player
+	cursors = game.input.keyboard.createCursorKeys();
+
 
 
 }
@@ -45,4 +48,11 @@ function create() {
 function update() {
 	//collision between player and platforms
 	game.physics.arcade.collide(player,platforms);
-}
+	//when left or right key pressed
+	if(cursors.left.isDown){
+		player.body.velocity.x = -150;
+	}
+	else if(cursors.right.isDown){
+		player.body.velocity.x = 150;
+	}
+
