@@ -50,7 +50,7 @@ function create() {
 		star.body.bounce.y = 0.6 + Math.random()*0.3;
 	}
 
-	scoreText = game.add.text(0,0, 'score : 0',{fontSize:'40px',fill:"#ffffff"});
+	scoreText = game.add.text(400,550, 'score : 0',{fontSize:'40px',fill:"#ffffff"});
 
 }
 
@@ -58,7 +58,7 @@ function update() {
 	//collision between player and platforms
 	game.physics.arcade.collide(player,platforms);
 	game.physics.arcade.collide(stars,platforms);
-	game.physics.arcade.overlaps(player,stars,collectStar,null,this);
+	game.physics.arcade.overlap(player,stars,collectStar,null,this);
 	//when left or right key pressed
 	if(cursors.left.isDown){
 		player.body.velocity.x = -150;
