@@ -1,4 +1,6 @@
 var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var score = 0;
+var scoreText;
 
 function preload() {
 	game.load.image('sky', 'assets/sky.png');
@@ -50,7 +52,7 @@ function create() {
 		star.body.bounce.y = 0.6 + Math.random()*0.3;
 	}
 
-	scoreText = game.add.text(300,547, 'score : 0',{fontSize:'40px',fill:"#ffffff"});
+	scoreText = game.add.text(300,550, 'score : 0',{fontSize:'40px',fill:"#ffffff"});
 
 }
 
@@ -82,5 +84,7 @@ function update() {
 	//what happens when the player overlaps with stars
 	function collectStar(player,star){
 		star.kill();
+		score += 10;
+		
 	}
 }
