@@ -52,7 +52,7 @@ function create() {
 		star.body.bounce.y = 0.6 + Math.random()*0.3;
 	}
 
-	scoreText = game.add.text(300,550, 'score : 0',{fontSize:'40px',fill:"#ffffff"});
+	scoreText = game.add.text(320,552, 'score : 0',{fontSize:'40px',fill:"#ffffff"});
 
 }
 
