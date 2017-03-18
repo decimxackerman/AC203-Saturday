@@ -84,7 +84,7 @@ function update() {
 	//what happens when the player overlaps with stars
 	function collectStar(player,star){
 		star.kill();
-		score += 10;
-		
+		score += 5;
+		scoreText.text="Score : " + score;
 	}
 }
